@@ -138,9 +138,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'loafer', 'static'),
 )
 
-STATIC_ROOT = (
-    os.path.join(BASE_DIR, 'loafer', 'static'),
-)
+STATIC_ROOT = 'staticfiles'
 
 
 # Media files
