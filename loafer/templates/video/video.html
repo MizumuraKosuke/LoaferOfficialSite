@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="video">
+    <div class="contents_title">
+        <h1>Video</h1>
+    </div>
+    <div class="page_contents">
+        {% for video in videos %}
+            <div class="video_contents">
+                <h3>{{ video.title }}</h3>
+                <iframe width="800" height="450" src="{{ video.URL }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock content %}

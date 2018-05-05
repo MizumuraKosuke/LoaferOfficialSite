@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Loafer official web site</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amatic+SC" />
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{% static 'favicon.ico' %}">
+    </head>
+    <body>
+        <div id="container">
+        <div id="back_blue">
+            <header>
+                <h1>
+                    <a href="{% url 'home' %}"><img src="../../static/home/IMG_1284.jpg" alt="logo" class="logo"></a>
+
+                </h1>
+            </header>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'news' %}">News</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'live' %}">Live</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'video' %}">Video</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'media' %}">Media</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'biography' %}">Bioglaphy</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'discography' %}">Discography</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'lyric' %}">lyric</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">contact</a>
+                    </li>
+                </ul>
+            <br style="clear:both;">
+            </nav>
+            <div class="contents">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <footer>
+                <p class="copyright">
+                    Copyright©︎ 2018 Kosuke Mizumura All rights reserved.
+                </p>
+            </footer>
+        </div>
+        </div>
+    </body>
+</html>

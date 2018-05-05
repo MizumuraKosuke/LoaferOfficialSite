@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="news">
+    <div class="contents_title">
+        <h1><a href="{% url 'news' %}">News</a></h1>
+    </div>
+    <div class="page_contents">
+        <p>{{ news.published_date.date }}</p>
+        <h2>{{ news.title }}</h2>
+        <img src="{{ news.image.url }}" alt="picture" class="news_pic">
+        <p>{{ news.text|linebreaks }}</p>
+    </div>
+</article>
+{% endblock content %}

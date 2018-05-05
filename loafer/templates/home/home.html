@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <img src="../../static/home/loafer005.jpg" alt="artist picture" class="home_pic">
+</div>
+<div>
+    <h2>宣伝情報</h2>
+</div>
+<div class="homelive">
+    <h2>Comming Live</h2>
+    <p><a href="{% url 'live' %}#fromhome">予約はLiveページから！</a></p>
+    <br style="clear:both;">
+</div>
+<div>
+    {% for live in next_lives %}
+        <div class="live_contents">
+            <h3><a href="{% url 'live_detail' live_id=live.pk %}">{{ live.title }}</a></h3>
+            <p class="live_date">{{ live.date.year }}.{{ live.date.month }}.{{ live.date.day }}</p>
+            <p class="live_place">{{ live.place }}</p>
+            <p class="live_artist">ARTISTS: {{ live.artists }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="biography">
+    <div class="contents_title">
+        <h1>Biography</h1>
+    </div>
+    <div class="page_contents">
+        <div>
+            <img src="{{ biography.image.url }}" alt="picture" class="bio_pic">
+            <div class="bio_exp">
+                <p>{{ biography.text|linebreaks }}</p>
+            </div>
+        </div>
+        <div class="member">
+            {% for solo in member %}
+                <div class="solo">
+                    <img src="{{ solo.image.url }}" alt="picture" class="solo_pic">
+                    <h3 class="solo_name">{{ solo.name }}</h3>
+                    <p class="soro_part">{{ solo.part }}</p>
+                    <p class="solo_age">{{ solo.age }}歳</p>
+                    <p class="solo_exp">{{ solo.text }}</p>
+                </div>
+            {% endfor %}
+            <br style="clear:both;">
+        </div>
+        <div class="history">
+            <div>
+                <h2>history</h2>
+            </div>
+            <div>
+                {% for event in events %}
+                    <div>
+                        <p>{{ event.date.year }}.{{ event.date.month }}.{{ event.date.day }}  {{ event.title }}  </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock content %}

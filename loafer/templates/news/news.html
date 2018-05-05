@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="news">
+    <div class="contents_title">
+        <h1>News</h1>
+    </div>
+    <div class="page_contents">
+        <div class="newss">
+            {% for news in newss %}
+                <div class="news_contents">
+                    <p class="news_date">{{ news.published_date.year }}.{{ news.published_date.month }}.{{ news.published_date.day }}</p>
+                    <div class="news_data">
+                        <img src="{{ news.image.url }}" alt="picture" class="news_pic">
+                        <h3><a href="{% url 'news_detail' news_id=news.pk %}">{{ news.title }}</a></h3>
+                        <p>{{ news.text|linebreaks }}</p>
+                    </div>
+                    <br style="clear:both;">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+{% endblock content %}

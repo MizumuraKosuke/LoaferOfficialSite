@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="contact">
+    <div class="contents_title">
+        <h1>Contact</h1>
+    </div>
+    <div class="page_contents">
+        <form method="POST" class="contact_form">
+            <p>なんでも、お気軽に連絡ください！なるべく返信させて頂きます。</p>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <P>ご確認の上、送信ください。</P>
+            <button type="submit">送信</button>
+        </form>
+    </div>
+</article>
+{% endblock %}

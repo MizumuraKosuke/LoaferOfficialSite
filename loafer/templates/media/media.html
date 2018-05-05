@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="media">
+    <div class="contents_title">
+        <h1>Media</h1>
+    </div>
+    <div class="page_contents">
+        <div>
+            <h2>New Media</h2>
+        </div>
+        <div>
+            {% for media in next_medias %}
+                <div class="media_contents">
+                    <span>{{ media.Category }}</span><br>
+                    <img src="{{ media.image.url }}" alt="picture" class="media_pic">
+                    <h3>{{ media.title }}</h3>
+                    {% if media.Category == 'TV' or media.Category == 'Radio' %}
+                        <p class="media_date">放送日: {{ media.date.year }}.{{ media.date.month }}.{{ media.date.day }} {{ media.time }}〜オンエア</p>
+                        <p class="media_broad">放送局: <a href="{{ media.url }}">{{ media.broadcast }}</a></p>
+                        {% elif media.Category == 'Magazine' %}
+                        <p class="media_date">{{ media.date.year }}.{{ media.date.month }}.{{ media.date.day }} 発売</p>
+                        <p class="media_broad">出版: <a href="{{ media.url }}">{{ media.broadcast }}</a></p>
+                    {% endif %}
+                    <p class="media_exp">詳細: {{ media.explain }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+            <h2>Past Media</h2>
+        </div>
+        <div class="pastmedia">
+            {% for media in past_medias %}
+                <div>
+                    <p><span>{{ media.Category }}</span> {{ media.date.year }}.{{ media.date.month }}.{{ media.date.day }}  {{ media.title }}  {{ media.broadcast }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="live">
+    <div class="contents_title">
+        <h1>Live</h1>
+    </div>
+    <div class="page_contents">
+        <div>
+            <h2>Comming Live</h2>
+        </div>
+        <div>
+            {% for live in next_lives %}
+                <div class="live_contents">
+                    <img src="{{ live.image.url }}" alt="picture" class="live_pic">
+                    <h3><a href="{% url 'live_detail' live_id=live.pk %}">{{ live.title }}</a></h3>
+                    <p class="live_date">{{ live.date.year }}.{{ live.date.month }}.{{ live.date.day }}</p>
+                    <p class="live_place">{{ live.place }}</p>
+                    <p class="live_artist">ARTISTS: {{ live.artists }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a name="fromhome"></a>
+        <div>
+            <h2>Ticket</h2>
+        </div>
+        <div class="live_contact">
+            <form method="POST" class="live_contact_form">
+                <p> チケットを取り置きでご用意いたします！会場の受付で、「ローファーで取り置きの○○です」とお名前を言って頂いて、その場でチケットを購入し入場します。
+                    お気軽にご予約下さい！ライブ詳細に特記してない場合、キャンセル料などはかかりません。
+                    また、ライブについて聞きたいこと、キャンセルなどはcontactページなどで連絡下さい！
+                    お客様の予約内容を確認次第、メールを返信致します。数日経っても返信が来ない場合、うまく予約が出来てない可能性があります。改めてご確認下さい。
+                </p>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <P>ご確認の上、送信ください。</P>
+                <button type="submit">送信</button>
+            </form>
+        </div>
+        <div>
+            <h2>Past Live</h2>
+        </div>
+        <div class="pastlive">
+            {% for live in past_lives %}
+                <div>
+                    <p>{{ live.date.year }}.{{ live.date.month }}.{{ live.date.day }}  {{ live.title }}  at {{ live.place }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+{% endblock content %}

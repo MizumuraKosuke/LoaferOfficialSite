@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="lyric">
+    <div class="contents_title">
+        <h1>Lyric</h1>
+    </div>
+    <div class="page_contents">
+        {% for lyric in lyrics %}
+            <div class="lyric_contents">
+                <h3>{{ lyric.title }}</h3>
+                <p class="lyric_text">{{ lyric.word|linebreaks }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="live">
+    <div class="contents_title">
+        <h1><a href="{% url 'live' %}">Live</a></h1>
+    </div>
+    <div class="page_contents">
+        <div class="live_detail">
+            <h3>{{ live.title }}</h3>
+            <img src="{{ live.image.url }}" alt="picture" class="live_pic">
+            <p class="live_date">{{ live.date.year }}.{{ live.date.month }}.{{ live.date.day }}</p>
+            <p class="live_place">会場: {{ live.place }}</p>
+            <p class="live_url"><a href="{{ live.url }}">{{ live.url }}</a></p>
+            <p class="live_time">OPEN: {{ live.open_time }} /START: {{ live.start_time }}</p>
+            <p class="live_ticket">TICKET 予約: ¥{{ live.adv }} /当日: ¥{{ live.door }}</p>
+            <p class="live_artist">出演アーティスト: {{ live.artists }}</p>
+        </div>
+        <div class="live_contact">
+            <form method="POST" class="live_contact_form">
+                <p>チケットを取り置きでご用意いたします！会場の受付で、「ローファーで取り置きの○○です」とお名前を言って頂いて、その場でチケットを購入し入場します。
+                    お気軽にご予約下さい！ライブ詳細に特記してない場合、キャンセル料などはかかりません。
+                    また、ライブについて聞きたいこと、キャンセルなどはcontactページなどで連絡下さい！
+                    お客様の予約内容を確認次第、メールを返信致します。数日経っても返信が来ない場合、うまく予約が出来てない可能性があります。改めてご確認下さい。
+                </p>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <P>ご確認の上、送信ください。</P>
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'disc_base.html' %}
+
+{% block disc %}
+<div>
+    <h2>Book</h2>
+</div>
+<div class="disc_viewing">
+    <table><tr>
+    {% for disc in book %}
+        <td>
+            <a href="{% url 'disc_detail' disc_id=disc.pk %}">
+                <div class="adisc">
+                    <img src="{{ disc.image.url }}" alt="picture" class="disc_pic"><br>
+                    <span>{{ disc.Category }}</span>
+                    <p>{{ disc.release.year }}.{{ disc.release.month }}.{{ disc.release.day }}</p>
+                    <p>{{ disc.title }}</p>
+                </div>
+            </a>
+        </td>
+        {% if forloop.counter|divisibleby:"4" %}
+            </tr><tr>    
+        {% endif %}
+    {% endfor %}
+    <tr></table>
+</div>
+{% endblock disc %}
