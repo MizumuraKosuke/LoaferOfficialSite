@@ -23,14 +23,14 @@ class Live(models.Model):
     def __str__(self):
         return self.title
 
-live_list = Live.objects.filter(published_date__lte=timezone.now()).order_by('date').reverse().filter(date__gte=timezone.now())
+#live_list = Live.objects.filter(published_date__lte=timezone.now()).order_by('date').reverse().filter(date__gte=timezone.now())
 
-LIVE=[]
-for live in live_list:
-    LIVE.append((live.title,live.title))
+#LIVE=[]
+#for live in live_list:
+#    LIVE.append((live.title,live.title))
 
 class LiveContact(models.Model):
     name = models.CharField(max_length=200, null=True)
     mail_address = models.EmailField(null=True)
-    which_live = models.CharField(max_length=200, choices=LIVE, null=True)
+    which_live = models.CharField(max_length=200, null=True)
     ticket = models.IntegerField(default=1, validators=[MaxValueValidator(100), MinValueValidator(1)] ,null=True)
