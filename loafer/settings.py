@@ -154,7 +154,6 @@ AWS_STORAGE_BUCKET_NAME = 'mizumura'
 MEDIA_URL = 'https://mizumura.s3.amazonaws.com/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'loafer', 'media')
-MEDIA_ROOT = 'https://mizumura.s3.amazonaws.com/'
 
 
 # email
