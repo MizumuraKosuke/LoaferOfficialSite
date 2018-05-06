@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'home',
     'news',
     'live',
@@ -140,12 +141,20 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = 'staticfiles'
 
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+
+AWS_ACCESS_KEY_ID = 'AKIAJHWOU242K36HCZJQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'mizumura'
+
 
 # Media files
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://mizumura.s3.amazonaws.com/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'loafer', 'media')
+MEDIA_ROOT = 'https://mizumura.s3.amazonaws.com/'
 
 
 # email
@@ -163,4 +172,3 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-    
