@@ -22,8 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'mr9df8(ad7tz&1uwgq%^6y8k!lepc)m-!q$%j!jmc(5ip&dp2='
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWORDED_PHOTO', 'https')
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -93,8 +95,6 @@ DATABASES = {
 
 DATABASES['default'] = dj_database_url.config()
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWORDED_PHOTO', 'https')
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -135,7 +135,7 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'loafer', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATIC_ROOT = 'staticfiles'
@@ -157,6 +157,7 @@ EMAIL_HOST_USER = 'band.loafer@gmail.com'
 EMAIL_HOST_PASSWORD = 'lrfduubaxvzqicjp'
 EMAIL_USE_TLS = True
 
+DEBUG = False
 
 try:
     from .local_settings import *
