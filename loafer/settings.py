@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.contrib.auth.context_processors.media',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -151,7 +152,7 @@ AWS_STORAGE_BUCKET_NAME = 'mizumura'
 
 # Media files
 
-MEDIA_URL = 'https://mizumura.s3.amazonaws.com/'
+MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'loafer', 'media')
 
