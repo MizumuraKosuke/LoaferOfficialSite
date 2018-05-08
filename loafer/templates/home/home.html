@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
 <div>
-    <img src="../../static/home/loafer005.jpg" alt="artist picture" class="home_pic">
+    <img src="{% static 'home/loafer005.jpg' %}" alt="artist picture" class="home_pic">
 </div>
 <div>
     <h2>宣伝情報</h2>
