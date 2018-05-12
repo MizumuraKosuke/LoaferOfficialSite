@@ -12,7 +12,7 @@
         <div>
             {% for live in next_lives %}
                 <div class="live_contents">
-                    <img src="/../static/media/news/{{ live.imagesub }}" alt="picture" class="live_pic">
+                    <img src="/../static/media/live/{{ live.imagesub }}" alt="picture" class="live_pic">
                     <h3><a href="{% url 'live_detail' live_id=live.pk %}">{{ live.title }}</a></h3>
                     <p class="live_date">{{ live.date.year }}.{{ live.date.month }}.{{ live.date.day }}</p>
                     <p class="live_place">{{ live.place }}</p>
