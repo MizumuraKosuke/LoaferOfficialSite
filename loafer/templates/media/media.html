@@ -13,7 +13,7 @@
             {% for media in next_medias %}
                 <div class="media_contents">
                     <span>{{ media.Category }}</span><br>
-                    <img src="{{ media.image.url }}" alt="picture" class="media_pic">
+                    <img src="/media/news/{{ media.imagesub }}" alt="picture" class="media_pic">
                     <h3>{{ media.title }}</h3>
                     {% if media.Category == 'TV' or media.Category == 'Radio' %}
                         <p class="media_date">放送日: {{ media.date.year }}.{{ media.date.month }}.{{ media.date.day }} {{ media.time }}〜オンエア</p>

@@ -19,6 +19,7 @@ class Media(models.Model):
     broadcast = models.CharField(max_length=100, blank=True, null=True)
     explain = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='media/', blank=True, null=True)
+    imagesub = models.CharField(max_length=200, blank=True, null=True)
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):

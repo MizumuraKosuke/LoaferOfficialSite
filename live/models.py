@@ -14,6 +14,7 @@ class Live(models.Model):
     door = models.IntegerField(default=0, blank=True, null=True)
     artists = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='live/', blank=True, null=True)
+    imagesub = models.CharField(max_length=200, blank=True, null=True)
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):

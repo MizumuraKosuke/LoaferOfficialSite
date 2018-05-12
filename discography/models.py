@@ -18,6 +18,7 @@ class Disc(models.Model):
     release = models.DateField(blank=True, null=True)
     status = models.CharField(max_length=200, default='発売中', blank=True, null=True)
     image = models.ImageField(upload_to='disc/', blank=True, null=True)
+    imagesub = models.CharField(max_length=200, blank=True, null=True)
     songs = models.TextField(blank=True, null=True)
     catchcopy = models.CharField(max_length=200, blank=True, null=True)
     comment = models.TextField(blank=True, null=True)

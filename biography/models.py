@@ -16,6 +16,7 @@ class Member(models.Model):
     part = models.CharField(max_length=50)
     age = models.IntegerField(default=0, blank=True, null=True)
     image = models.ImageField(upload_to='biography/member', blank=True, null=True)
+    imagesub = models.CharField(max_length=200, blank=True, null=True)
     text = models.TextField(blank=True, null=True)
     
     def __str__(self):

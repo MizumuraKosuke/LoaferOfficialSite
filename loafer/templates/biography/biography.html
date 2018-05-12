@@ -7,7 +7,7 @@
     </div>
     <div class="page_contents">
         <div>
-            <img src="{{ biography.image.url }}" alt="picture" class="bio_pic">
+            <img src="/media/news/{{ biography.imagesub }}" alt="picture" class="bio_pic">
             <div class="bio_exp">
                 <p>{{ biography.text|linebreaks }}</p>
             </div>
@@ -15,7 +15,7 @@
         <div class="member">
             {% for solo in member %}
                 <div class="solo">
-                    <img src="{{ solo.image.url }}" alt="picture" class="solo_pic">
+                    <img src="/media/news/{{ solo.imagesub }}" alt="picture" class="solo_pic">
                     <h3 class="solo_name">{{ solo.name }}</h3>
                     <p class="soro_part">{{ solo.part }}</p>
                     <p class="solo_age">{{ solo.age }}歳</p>

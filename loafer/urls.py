@@ -31,4 +31,7 @@ urlpatterns = [
     path('discography/', include('discography.urls')),
     path('lyric/', include('lyric.urls')),
     path('contact/', include('contact.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG == True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

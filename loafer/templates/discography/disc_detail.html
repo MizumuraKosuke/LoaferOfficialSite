@@ -2,7 +2,7 @@
 
 {% block disc %}
 <div class="disc_detail">
-    <img src="{{ disc.image.url }}" alt="picture" class="disc_pic">
+    <img src="/media/news/{{ disc.imagesub }}" alt="picture" class="disc_pic">
     <div class="disc_detail_data">
         <p class="release">{{ disc.release.year }}.{{ disc.release.month }}.{{ disc.release.day }} {{ disc.status }}</p>
         <h3>{{ disc.title }}</h3>
