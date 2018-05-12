@@ -8,7 +8,7 @@
     <div class="page_contents">
         <div class="live_detail">
             <h3>{{ live.title }}</h3>
-            <img src="{{ live.image.url }}" alt="picture" class="live_pic">
+            <img src="/../static/media/news/{{ live.imagesub }}" alt="picture" class="live_pic">
             <p class="live_date">{{ live.date.year }}.{{ live.date.month }}.{{ live.date.day }}</p>
             <p class="live_place">会場: {{ live.place }}</p>
             <p class="live_url"><a href="{{ live.url }}">{{ live.url }}</a></p>
