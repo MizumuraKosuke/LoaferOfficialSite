@@ -12,7 +12,7 @@
                 <div class="news_contents">
                     <p class="news_date">{{ news.published_date.year }}.{{ news.published_date.month }}.{{ news.published_date.day }}</p>
                     <div class="news_data">
-                        <img src="static/media/news/{{ news.imagesub }}" alt="picture" class="news_pic">
+                        <img src="/../static/media/news/{{ news.imagesub }}" alt="picture" class="news_pic">
                         <h3><a href="{% url 'news_detail' news_id=news.pk %}">{{ news.title }}</a></h3>
                         <p>{{ news.text|linebreaks }}</p>
                     </div>
