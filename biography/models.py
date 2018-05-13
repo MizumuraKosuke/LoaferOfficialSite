@@ -5,6 +5,7 @@ class Biography(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
     text = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='biography/biography', blank=True, null=True)
+    imagesub = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.text
