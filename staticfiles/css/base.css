@@ -146,6 +146,11 @@ a:hover {
     border-top: solid 3em steelblue;
 }
 
+.homenews_pic {
+    width: 80em;
+    height: 50em;
+}
+
 .homelive h2 {
     float: left;
 }

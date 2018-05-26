@@ -4,13 +4,22 @@
 
 {% block content %}
 <div>
+    <img src="{% static 'home/loafer005.jpg' %}"  id="sd" alt="news picture" class="homenews_pic">
+    <a href="javascript:;" onclick="backNews();">
+        <img src="/../static/media/icon/left.png" width="30" height="30" alt="">
+    </a>
+    <a href="javascript:;" onclick="forwardNews();">
+        <img src="/../static/media/icon/right.png" width="30" height="30" alt="">
+    </a>
+</div>
+<div>
     <img src="{% static 'home/loafer005.jpg' %}" alt="artist picture" class="home_pic">
 </div>
 <div>
     {% for news in newss %}
-        <div class="news_slide">
-            <img src="/../static/media/news/{{ news.imagesub }}" alt="picture" class="news_pic">
-            <h3><a href="#">{{ news.title }}</a></h3>
+    <div class="news_slide">
+        <img src="/../static/media/news/{{ news.imagesub }}" alt="picture" class="news_pic">
+        <h3><a href="#">{{ news.title }}</a></h3>
         </div>
     {% endfor %}
 </div>
