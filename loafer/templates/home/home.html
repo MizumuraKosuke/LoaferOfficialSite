@@ -7,7 +7,12 @@
     <img src="{% static 'home/loafer005.jpg' %}" alt="artist picture" class="home_pic">
 </div>
 <div>
-    <h2>宣伝情報</h2>
+    {% for news in newss %}
+        <div class="news_slide">
+            <img src="/../static/media/news/{{ news.imagesub }}" alt="picture" class="news_pic">
+            <h3><a href="#">{{ news.title }}</a></h3>
+        </div>
+    {% endfor %}
 </div>
 <div class="homelive">
     <h2>Comming Live</h2>
@@ -23,5 +28,5 @@
             <p class="live_artist">ARTISTS: {{ live.artists }}</p>
         </div>
     {% endfor %}
-    </div>
+</div>
 {% endblock content %}
