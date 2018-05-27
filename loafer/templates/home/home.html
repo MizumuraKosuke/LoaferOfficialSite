@@ -38,4 +38,13 @@
         </div>
     {% endfor %}
 </div>
+<script>
+    var image = new Array();
+    var current = 0;
+    {% for news in newss %}
+        image[current] = new Image();
+        image[current].src = "/../static/media/news/{{ news.imagesub }}";
+        current++;
+    {% endfor %}
+</script>
 {% endblock content %}
