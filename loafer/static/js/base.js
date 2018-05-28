@@ -1,11 +1,3 @@
-/*var image = new Array();
-
-image[0] = new Image();
-image[0].src = "/../static/media/news/image.png";
-image[1] = new Image();
-image[1].src = "/../static/media/news/image-2.png";
-*/
-
 var cnt = 0;
 
 var timer1;
@@ -15,7 +7,8 @@ function slideNews(){
     if (cnt >= current) {
         cnt = 0;
     }
-    document.getElementById("sd").src = image[cnt].src;
+    document.getElementById("hnp").src = image[cnt].src;
+    document.getElementById("hnt").innerHTML = title[cnt];
     timer1 = setTimeout("slideNews()",5000);
 }
 
@@ -25,7 +18,8 @@ function forwardNews(){
     if (cnt >= current) {
         cnt = 0;
     }
-    document.getElementById("sd").src = image[cnt].src;
+    document.getElementById("hnp").src = image[cnt].src;
+    document.getElementById("hnt").innerHTML = title[cnt];
     timer1 = setTimeout("slideNews()",5000);
 }
 
@@ -35,7 +29,8 @@ function backNews(){
     if (cnt < 0) {
         cnt = current-1;
     }
-    document.getElementById("sd").src = image[cnt].src;
+    document.getElementById("hnp").src = image[cnt].src;
+    document.getElementById("hnt").innerHTML = title[cnt];
     timer1 = setTimeout("slideNews()",5000);
 }
 

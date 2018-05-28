@@ -3,25 +3,15 @@
 {% load staticfiles %}
 
 {% block content %}
-<div>
-    <img src="{% static 'home/loafer005.jpg' %}"  id="sd" alt="news picture" class="homenews_pic">
-    <a href="javascript:;" onclick="backNews();">
-        <img src="/../static/media/icon/left.png" width="30" height="30" alt="">
+<div class="homenews">
+    <img src="{% static 'home/loafer005.jpg' %}"  id="hnp" alt="news picture" class="homenews_pic">
+    <h3><a href="{% url 'news' %}" id="hnt"></a></h3>
+    <a href="javascript:;" onclick="backNews();" class="hnb">
+        <img src="/../static/media/icon/left.png" width="50" height="50" alt="">
     </a>
-    <a href="javascript:;" onclick="forwardNews();">
-        <img src="/../static/media/icon/right.png" width="30" height="30" alt="">
+    <a href="javascript:;" onclick="forwardNews();" class="hnf">
+        <img src="/../static/media/icon/right.png" width="50" height="50" alt="">
     </a>
-</div>
-<div>
-    <img src="{% static 'home/loafer005.jpg' %}" alt="artist picture" class="home_pic">
-</div>
-<div>
-    {% for news in newss %}
-    <div class="news_slide">
-        <img src="/../static/media/news/{{ news.imagesub }}" alt="picture" class="news_pic">
-        <h3><a href="#">{{ news.title }}</a></h3>
-        </div>
-    {% endfor %}
 </div>
 <div class="homelive">
     <h2>Comming Live</h2>
@@ -38,12 +28,17 @@
         </div>
     {% endfor %}
 </div>
+<div>
+    <img src="{% static 'home/loafer005.jpg' %}" alt="artist picture" class="home_pic">
+</div>
 <script>
     var image = new Array();
+    var title = new Array();
     var current = 0;
     {% for news in newss %}
         image[current] = new Image();
         image[current].src = "/../static/media/news/{{ news.imagesub }}";
+        title[current] = "{{ news.title }}"
         current++;
     {% endfor %}
 </script>
