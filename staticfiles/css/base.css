@@ -72,7 +72,7 @@ nav li {
     background-color: white;
     padding: 0.6em 1em;
     margin-top: 1em;
-    transition: 2.0s;
+    transition: 1.0s;
 }
 
 nav li a {
@@ -410,11 +410,12 @@ a:hover {
     margin: auto;
     padding-top: 2em;
     border-radius: 1em;
-    border: solid 0.05em coral;
+    border: solid 0.05em gray;
+    transition: 1.0s;
 }
 
 a:hover .adisc {
-    background-color: coral;
+    border: solid 1em coral;
 }
 
 .adisc span, .disc_detail span {
